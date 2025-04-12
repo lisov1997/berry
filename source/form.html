@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Berry: Закажи ягоды с доставкой в Санкт-Петербурге</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preload" href="#" type="font/woff2" as="font">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/index.js" defer></script>
+  </head>
+  <body class="page__body">
+    <header class="page__header page-header">
+      <nav class="page-header__nav">
+        <div class="page-header__bar">
+          <a class="page-header__logo" href="index.html">
+          </a>
+          <button class="page-header__menu-toggler" type="button">
+          <span class="visually-hidden">Открыть меню</span>
+          </button>
+        </div>
+
+        <ul class="page-header__site-menu site-menu">
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">Каталог</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">Новости</a>
+          </li>
+          <li class="site-menu__item">
+            <a class="site-menu__link" href="#">Контакты</a>
+          </li>
+          <li class="site-menu__item site-menu__item--active">
+            <a class="site-menu__link" href="#">Заказать</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="page__main page-main">
+      <header class="page-main__header">
+        <h1 class="page-main__heading">Закажи ягоды</h1>
+        <p class="page-main__subheading">Мы соберем для вас ягоды и доставим их в удобном
+          для вас виде - свежими или замороженными </p>
+      </header>
+
+      <section class="page-main__form form">
+        <h2 class="visually-hidden">Форма заказа</h2>
+        <form class="form__container" action="https://echo.htmlacademy.ru/" method="post">
+          <fieldset class="form__form-group field-group">
+            <legend class="field-group__title">Выберите ягоды</legend>
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="lingonberry">
+                  <span class="control__lead">брусника</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="cherry">
+                  <span class="control__lead">вишня</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="blueberry">
+                  <span class="control__lead">голубика</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="blackberry">
+                  <span class="control__lead">ежевика</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="strawberry">
+                  <span class="control__lead">клубника</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="cranberry">
+                  <span class="control__lead">клюква</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="gooseberry">
+                  <span class="control__lead">крыжовник</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="raspberry">
+                  <span class="control__lead">малина</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="cloudberry">
+                  <span class="control__lead">морошка</span>
+                </label>
+              </li>
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="blaeberry">
+                  <span class="control__lead">черника</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="form__form-group field-group">
+            <legend class="field-group__title">Вид хранения</legend>
+            <ul class="field-group__list">
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="fresh-berries">
+                  <span class="control__lead">свежие ягоды</span>
+                </label>
+              </li>
+
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="frozen-berries">
+                  <span class="control__lead">замороженные ягоды</span>
+                </label>
+              </li>
+
+              <li class="field-group__item">
+                <label class="field-group__control control control--checkbox">
+                  <input class="control__input" type="checkbox" name="berry-mixes">
+                  <span class="control__lead">ягодные миксы</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset
+          class="form__form-group field-group">
+          <legend class="field-group__title">Способ доставки</legend>
+
+          <ul class="field-group__list">
+
+            <li class="field-group__item">
+              <label class="field-group__control control control--radio">
+                <input class="control__input" type="radio" name="delivery-method" value="delivery">
+                <span class="control__lead">Доставка (по СПБ в пределах КАД)</span>
+              </label>
+            </li>
+
+            <li class="field-group__item">
+              <label class="field-group__control control control--radio">
+                <input class="control__input" type="radio" name="delivery-method" value="self-delivery">
+                <span class="control__lead">Самовывоз
+                  (Набережная Обводного канала, 101)</span>
+              </label>
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="form__form-group field-group">
+          <legend class="field-group__title">
+            Ваши контакты
+          </legend>
+
+          <ul class="field-group__list">
+
+            <li class="field-group__item">
+
+              <label class="field-group__label field">
+                <span class="field__title">Имя*</span>
+                <input class="field__input" name="name" type="text" id="client-name"
+                  placeholder="Как к вам обращаться?" required>
+              </label>
+            </li>
+
+            <li class="field-group__item">
+
+              <label class="field-group__label field">
+                <span class="field__title">Телефон*</span>
+                <input class="field__input" name="telephone" type="tel" id="client-telephone"
+                  placeholder="+7 ххх ххх хх хх" required>
+              </label>
+            </li>
+
+            <li class="field-group__item">
+
+              <label class="field-group__label field">
+                <span class="field__title">Email*</span>
+                <input class="field__input" name="e-mail" type="email" id="client-email"
+                  placeholder="Ваш email" required>
+              </label>
+            </li>
+
+            <li class="field-group__item">
+
+              <label class="field-group__label field">
+                <span class="field__title">Адрес*</span>
+                <input class="field__input" name="address" type="text" id="client-address"
+                  placeholder="Адрес в Санкт-Петербурге" required>
+              </label>
+            </li>
+
+            <li class="field-group__item">
+
+              <label class="field-group__label field">
+                <span class="field__title">Пожелания к заказу</span>
+                <textarea class="field__input field__input--textarea" name="comment-about-order" id="comment-about-order"
+                placeholder="Чем мы можем вам помочь?"></textarea>
+              </label>
+            </li>
+          </ul>
+          </fieldset>
+          <button class="button form__submit" type="submit">Заказать</button>
+        </form>
+      </section>
+
+      <footer class="page-main__footer contacts">
+        <h2 class="page-main__heading">Где забрать ягоды? </h2>
+        <p class="contacts__text">Забери ягоды с нашего склада по адресу: </p>
+        <address class="contacts__address">
+          <span>Набережная Обводного канала, 101</span>
+          <a href="tel:+79105244118">+ 7 910 524 41 18</a>
+          <a href="mailto:info@yagoda.ru">info@yagoda.ru</a>
+        </address>
+        <iframe class="contacts__map" title="Склад Berry" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4ad0c3339d33a09380d126af75f38b7c4c36af1dfa662fbfe02c10c138a77814&amp;source=constructor" width="320" height="372"></iframe>
+      </footer>
+    </main>
+
+    <footer class="page__footer page-footer">
+      <a class="page-footer__logo logo" href="index.html">
+
+      </a>
+      <ul class="page-footer__socials-list social">
+        <li class="social__item">
+          <a class="social__item" href="https://t.me/htmlacademy">
+            <span class="visually-hidden">Наш канал в Telegram</span>
+          </a>
+          <a class="social__item" href="https://vk.com/htmlacademy">
+            <span class="visually-hidden">Наш канал в VK</span>
+          </a>
+          <a class="social__item" href="https://www.youtube.com/@HTMLAcademyTV">
+            <span class="visually-hidden">Наш канал в Youtube</span>
+          </a>
+        </li>
+      </ul>
+      <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
+        <span class="visually-hidden">Разработано:</span>HTML Academy
+      </a>
+    </footer>
+  </body>
+</html>
