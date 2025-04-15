@@ -1,0 +1,23 @@
+.page {
+  min-width: 320px;
+  height: 100%;
+  font-family: $font-family-primary;
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: $breakpoint-medium) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+.page__main {
+  flex-grow: 1;
+}
