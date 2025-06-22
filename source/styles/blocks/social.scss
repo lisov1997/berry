@@ -1,0 +1,55 @@
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+	@include reset-list;
+
+  @include breakpoint-mobile {
+    // min-width: 136px;
+  // display: grid;
+  // grid-template-columns: repeat(auto-fill, 32px);
+  // gap: 20px;
+  // align-content: center;
+    gap: 20px;
+  }
+
+  @include breakpoint-tablet {
+    min-width: 184px;
+    gap: 32px;
+  }
+}
+
+.social__link {
+  // display: flex;
+  // width: 32px;
+  // height: 32px;
+  // color: $color-accent-secondary;
+  @include social-link;
+}
+
+.social__icon {
+  margin: auto;
+
+  @include breakpoint-mobile {
+    &--telegram {
+      margin: 4px 6px 6px 4px;
+    }
+  }
+
+  @include breakpoint-tablet {
+    &--telegram,
+    &--youtube {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--telegram {
+      margin: 7px 9px 9px 7px;
+    }
+
+    &--vkontakte {
+      width: 24px;
+      height: 19px;
+    }
+  }
+}

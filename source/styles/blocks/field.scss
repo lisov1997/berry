@@ -1,0 +1,55 @@
+.field {
+  line-height: 125%;
+  display: grid;
+  gap: 4px;
+}
+
+.field__title {
+  @include breakpoint-tablet {
+    font-size: 16px;
+  }
+}
+
+.field__required {
+  margin-left: 2px;
+  font-size: 16px;
+  line-height: 125%;
+  text-align: center;
+  color: $color-form-error;
+}
+
+.field__input {
+  padding: 16px 12px;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 125%;
+  border: 1px solid $color-accent-secondary;
+  border-radius: 20px;
+
+  &:hover,
+  &:active {
+    border-color: $color-link-hover;
+  }
+
+  &:focus {
+    border-color: $color-btn-hover;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    border-color: $color-form-error;
+  }
+
+  &:placeholder {
+    color: $color-form-error;
+  }
+}
+
+.field__error-text {
+  font-size: 16px;
+  line-height: 125%;
+  color: $color-form-error;
+}
+
+.field__input--textarea {
+  min-height: 124px;
+}

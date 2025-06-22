@@ -1,0 +1,52 @@
+.page-main__heading {
+  @include title;
+}
+
+.page-main__section--decorated {
+  position: relative;
+  @include pseudo($absolute: true) {
+    width: 228px;
+    height: 32px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url("../../images/section-decoration-icon.svg");
+    background-repeat: no-repeat;
+
+    @include breakpoint-mobile {
+      width: 228px;
+      height: 32px;
+    }
+
+    @include breakpoint-tablet {
+      width: 296px;
+      height: 4%;
+    }
+  }
+}
+
+.page-main__header {
+  @include breakpoint-mobile {
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint-tablet {
+    margin-bottom: 100px;
+  }
+}
+
+.page-main__section {
+  @include breakpoint-mobile {
+    margin-bottom: 60px;
+  }
+
+  @include breakpoint-tablet {
+    margin-bottom: 100px;
+  }
+}
+
+// .page-main__subheading {
+//   margin: 0;
+//   font-size: 16px;
+//   text-align: center;
+// }

@@ -11,18 +11,31 @@
   </head>
   <body class="page__body">
     <header class="page__header page-header">
-      <nav class="page-header__nav">
+      <nav class="page-header__nav page-header__nav--closed">
         <div class="page-header__bar">
-          <a class="page-header__logo" href="index.html">
+          <a class="page-header__logo logo" href="index.html" aria-label="На главную">
+            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img" aria-label="Логотип компании Berry">
+              <use href="icons/stack.svg#logo-image"></use>
+            </svg>
+
+            <svg class="logo__sign" width="65" height="36" viewBox="0 0 65 36" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#logo-sign"></use>
+            </svg>
           </a>
-          <button class="page-header__menu-toggler" type="button">
-          <span class="visually-hidden">Открыть меню</span>
+          <button class="page-header__nav-toggler" type="button">
+            <span class="visually-hidden">Открыть /Закрыть меню</span>
+            <svg class="page-header__toggler-icon page-header__toggler-icon--closed" width="60" height="60" viewBox="0 0 60 60" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#toggler-burger"></use>
+            </svg>
+            <svg class="page-header__toggler-icon page-header__toggler-icon--opened" width="28" height="28" viewBox="0 0 28 28" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#toggler-cross"></use>
+            </svg>
           </button>
         </div>
 
         <ul class="page-header__site-menu site-menu">
           <li class="site-menu__item">
-            <a class="site-menu__link" href="#">Каталог</a>
+            <a class="site-menu__link" href="index.html#catalog">Каталог</a>
           </li>
           <li class="site-menu__item">
             <a class="site-menu__link" href="#">Новости</a>
@@ -30,7 +43,7 @@
           <li class="site-menu__item">
             <a class="site-menu__link" href="#">Контакты</a>
           </li>
-          <li class="site-menu__item site-menu__item--active">
+          <li class="site-menu__item">
             <a class="site-menu__link" href="#">Заказать</a>
           </li>
         </ul>
@@ -38,16 +51,19 @@
     </header>
 
     <main class="page__main page-main">
-      <header class="page-main__header">
-        <h1 class="page-main__heading">Закажи ягоды</h1>
-        <p class="page-main__subheading">Мы соберем для вас ягоды и доставим их в удобном
-          для вас виде - свежими или замороженными </p>
+      <header class="page-main__header form-header">
+        <div class="container">
+        <h1 class="page-main__heading form-header__title">Закажи ягоды</h1>
+        <p class="form-header__text">Мы соберем для вас ягоды и доставим их в удобном
+          для вас виде - свежими или замороженными</p>
+        </div>
       </header>
 
-      <section class="page-main__form form">
+      <section class="page-main__section page-main__section--decorated form">
+        <div class="container">
         <h2 class="visually-hidden">Форма заказа</h2>
         <form class="form__container" action="https://echo.htmlacademy.ru/" method="post">
-          <fieldset class="form__form-group field-group">
+          <fieldset class="form__form-group field-group field-group--choise-berry">
             <legend class="field-group__title">Выберите ягоды</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -100,20 +116,20 @@
               </li>
               <li class="field-group__item">
                 <label class="field-group__control control control--checkbox">
-                  <input class="control__input" type="checkbox" name="cloudberry">
+                  <input class="control__input" type="checkbox" name="cloudberry" disabled>
                   <span class="control__lead">морошка</span>
                 </label>
               </li>
               <li class="field-group__item">
                 <label class="field-group__control control control--checkbox">
-                  <input class="control__input" type="checkbox" name="blaeberry">
+                  <input class="control__input" type="checkbox" name="blaeberry" disabled>
                   <span class="control__lead">черника</span>
                 </label>
               </li>
             </ul>
           </fieldset>
 
-          <fieldset class="form__form-group field-group">
+          <fieldset class="form__form-group field-group field-group--choise-method-of-berry-storage">
             <legend class="field-group__title">Вид хранения</legend>
             <ul class="field-group__list">
               <li class="field-group__item">
@@ -140,117 +156,169 @@
           </fieldset>
 
           <fieldset
-          class="form__form-group field-group">
+          class="form__form-group field-group field-group--choise-method-delivery">
           <legend class="field-group__title">Способ доставки</legend>
 
           <ul class="field-group__list">
 
             <li class="field-group__item">
               <label class="field-group__control control control--radio">
-                <input class="control__input" type="radio" name="delivery-method" value="delivery">
-                <span class="control__lead">Доставка (по СПБ в пределах КАД)</span>
+                <input class="control__input" type="radio" name="delivery-method" value="delivery" checked>
+                <span class="control__lead">Доставка <br> (по СПБ в пределах КАД)</span>
               </label>
             </li>
 
             <li class="field-group__item">
               <label class="field-group__control control control--radio">
                 <input class="control__input" type="radio" name="delivery-method" value="self-delivery">
-                <span class="control__lead">Самовывоз
+                <span class="control__lead">Самовывоз <br>
                   (Набережная Обводного канала, 101)</span>
               </label>
             </li>
           </ul>
         </fieldset>
 
-        <fieldset class="form__form-group field-group">
+        <fieldset class="form__form-group field-group field-group--customer-details">
           <legend class="field-group__title">
             Ваши контакты
           </legend>
 
           <ul class="field-group__list">
 
-            <li class="field-group__item">
+            <li class="field-group__item field-group__item--name">
 
               <label class="field-group__label field">
-                <span class="field__title">Имя*</span>
+                <span class="field__title">Имя<span class="field__required">*</span></span>
                 <input class="field__input" name="name" type="text" id="client-name"
                   placeholder="Как к вам обращаться?" required>
               </label>
             </li>
 
-            <li class="field-group__item">
+            <li class="field-group__item field-group__item--telephone">
 
               <label class="field-group__label field">
-                <span class="field__title">Телефон*</span>
+                <span class="field__title">Телефон
+                  <span class="field__required">*</span></span>
                 <input class="field__input" name="telephone" type="tel" id="client-telephone"
                   placeholder="+7 ххх ххх хх хх" required>
               </label>
             </li>
 
-            <li class="field-group__item">
+            <li class="field-group__item field-group__item--email">
 
               <label class="field-group__label field">
-                <span class="field__title">Email*</span>
+                <span class="field__title">Email<span class="field__required">*</span></span>
                 <input class="field__input" name="e-mail" type="email" id="client-email"
                   placeholder="Ваш email" required>
               </label>
             </li>
 
-            <li class="field-group__item">
+            <li class="field-group__item field-group__item--address">
 
               <label class="field-group__label field">
-                <span class="field__title">Адрес*</span>
+                <span class="field__title">Адрес<span class="field__required">*</span></span>
                 <input class="field__input" name="address" type="text" id="client-address"
                   placeholder="Адрес в Санкт-Петербурге" required>
               </label>
             </li>
 
-            <li class="field-group__item">
+            <li class="field-group__item field-group__item--comment">
 
               <label class="field-group__label field">
                 <span class="field__title">Пожелания к заказу</span>
                 <textarea class="field__input field__input--textarea" name="comment-about-order" id="comment-about-order"
-                placeholder="Чем мы можем вам помочь?"></textarea>
+                placeholder="Чем мы можем вам помочь?" rows="4"></textarea>
               </label>
             </li>
           </ul>
           </fieldset>
           <button class="button form__submit" type="submit">Заказать</button>
         </form>
+        </div>
       </section>
 
-      <footer class="page-main__footer contacts">
-        <h2 class="page-main__heading">Где забрать ягоды? </h2>
-        <p class="contacts__text">Забери ягоды с нашего склада по адресу: </p>
+      <section class="page-main__section page-main__section--decorated contacts">
+        <div class="contacts__content">
+        <h2 class="page-main__heading contacts__title">Где забрать ягоды?</h2>
+        <p class="contacts__text">Забери ягоды с нашего склада по адресу:</p>
         <address class="contacts__address">
-          <span>Набережная Обводного канала, 101</span>
-          <a href="tel:+79105244118">+ 7 910 524 41 18</a>
-          <a href="mailto:info@yagoda.ru">info@yagoda.ru</a>
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <a class="contacts__link" href="#contacts-figure">
+                <svg class="contacts__link-icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#address-icon"></use>
+            </svg>
+                <span class="contacts__link-text">Набережная Обводного канала, 101</span></a>
+          </li>
+          <li class="contacts__item">
+          <a class="contacts__link" href="tel:+79105244118">
+            <svg class="contacts__link-icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#phone-icon"></use>
+            </svg>
+            <span class="contacts__link-text">+ 7 910 524 41 18</span>
+          </a>
+          </li>
+          <li class="contacts__item">
+          <a class="contacts__link" href="mailto:info@yagoda.ru">
+            <svg class="contacts__link-icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#email-icon"></use>
+            </svg>
+            <span class="contacts__link-text">info@yagoda.ru</span></a>
+          </li>
+          </ul>
         </address>
+        </div>
+        <figure class="contacts__figure" id="contacts-figure">
         <iframe class="contacts__map" title="Склад Berry" src="https://yandex.ru/map-widget/v1/?um=constructor%3A4ad0c3339d33a09380d126af75f38b7c4c36af1dfa662fbfe02c10c138a77814&amp;source=constructor" width="320" height="372"></iframe>
-      </footer>
+        <figcaption class="visually-hidden">Наш склад на карте по адресу Набережная Обводного канала, 101</figcaption>
+        </figure>
+      </section>
     </main>
 
     <footer class="page__footer page-footer">
-      <a class="page-footer__logo logo" href="index.html">
+      <div class="page-footer__container container">
+      <a class="page-footer__logo logo" href="index.html" aria-label="На главную">
+            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img" aria-label="Логотип компании Berry">
+              <use href="icons/stack.svg#logo-image"></use>
+            </svg>
 
-      </a>
+            <svg class="logo__sign" width="65" height="36" viewBox="0 0 65 36" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#logo-sign"></use>
+            </svg>
+          </a>
       <ul class="page-footer__socials-list social">
         <li class="social__item">
-          <a class="social__item" href="https://t.me/htmlacademy">
+          <a class="social__link" href="https://t.me/htmlacademy">
+            <svg class="social__icon social__icon--telegram" width="20" height="20" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#social-icon-telegram"></use>
+            </svg>
             <span class="visually-hidden">Наш канал в Telegram</span>
           </a>
-          <a class="social__item" href="https://vk.com/htmlacademy">
-            <span class="visually-hidden">Наш канал в VK</span>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://vk.com/htmlacademy">
+            <svg class="social__icon social__icon--vkontakte" width="20" height="16" viewBox="0 0 20 16" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#social-icon-vkontakte"></use>
+            </svg>
+            <span class="visually-hidden">Наш группа в VK</span>
           </a>
-          <a class="social__item" href="https://www.youtube.com/@HTMLAcademyTV">
+          </li>
+          <li class="social__item">
+          <a class="social__link" href="https://www.youtube.com/@HTMLAcademyTV">
+            <svg class="social__icon social__icon--youtube" width="20" height="20" viewBox="0 0 20 20" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#social-icon-youtube"></use>
+            </svg>
             <span class="visually-hidden">Наш канал в Youtube</span>
           </a>
-        </li>
+          </li>
       </ul>
       <a class="page-footer__developer developer" href="https://htmlacademy.ru/intensive/adaptive">
         <span class="visually-hidden">Разработано:</span>HTML Academy
+        <svg class="developer__icon" width="20" height="24" viewBox="0 0 20 24" focusable="false" aria-hidden="true">
+              <use href="icons/stack.svg#developer-icon"></use>
+            </svg>
       </a>
+      </div>
     </footer>
   </body>
 </html>

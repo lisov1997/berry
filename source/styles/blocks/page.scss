@@ -5,7 +5,7 @@
   font-size: 14px;
   line-height: 16px;
 
-  @media (min-width: $breakpoint-medium) {
+  @include breakpoint-tablet {
     font-size: 16px;
     line-height: 20px;
   }
@@ -21,3 +21,7 @@
 .page__main {
   flex-grow: 1;
 }
+
+// .page__footer {
+//   background-color: $color-bg;
+// }

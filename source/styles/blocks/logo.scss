@@ -1,0 +1,39 @@
+.logo {
+  color: $color-accent-secondary;
+  @include breakpoint-mobile {
+    padding-top: 4px;
+  }
+
+  @include breakpoint-tablet {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    align-items: center;
+    gap: 8px;
+    line-height: 0;
+  }
+
+  &:hover {
+    color: $color-link-hover;
+  }
+
+  &:focus {
+    color: $color-link-hover;
+  }
+
+  &:active {
+    color: $color-link-active;
+  }
+}
+
+.logo__image {
+  @include breakpoint-tablet {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.logo__sign {
+  @include breakpoint-mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+.form {
+  @include breakpoint-mobile {
+    padding: 82px 0 6px 0;
+  }
+
+  @include breakpoint-tablet {
+    padding: 114px 0 0 0;
+  }
+
+  @include breakpoint-desktop {
+    padding: 104px 0 0 0;
+  }
+}
+
+.form__container {
+  display: grid;
+
+  @include breakpoint-mobile {
+    gap: 32px;
+  }
+
+  @include breakpoint-tablet {
+    gap: 40px;
+    padding: 0 46px;
+  }
+
+  @include breakpoint-tablet {
+    gap: 46px;
+    padding: 0 104px;
+  }
+}
+
+.form__submit {
+  @include button (
+    $padding: 16px,
+  );
+
+
+  @include breakpoint-mobile {
+    margin-bottom: 32px;
+    min-width: 264px;
+    justify-self: center;
+  }
+
+  @include breakpoint-tablet {
+    min-width: 336px;
+    justify-self: center;
+  }
+}

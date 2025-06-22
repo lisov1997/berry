@@ -1,0 +1,125 @@
+.contacts {
+
+  @include breakpoint-mobile {
+    padding: 104px 0 0 0;
+  }
+
+  @include breakpoint-tablet {
+    padding: 114px 0 0 0;
+  }
+
+  @include breakpoint-desktop {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    gap: 20px;
+    justify-content: space-between;
+    width: 1128px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    padding: 142px 0 0 0;
+  }
+}
+// .contacts__title {
+//   display: block;
+//   padding-left: 5px;
+//   padding-right: 5px;
+// }
+
+.contacts__content {
+  @include breakpoint-mobile {
+    margin-bottom: 24px;
+  }
+
+  @include breakpoint-tablet {
+    margin-bottom: 40px;
+    padding: 0 96px 0 92px;
+  }
+
+  @include container($width-desktop:553px){
+    @include breakpoint-desktop{
+    margin: 0;
+    }
+  };
+
+  @include breakpoint-desktop {
+    padding: 0;
+  }
+}
+
+.contacts__title {
+  @include breakpoint-mobile {
+    margin-bottom: 70px;
+  }
+
+  @include breakpoint-tablet {
+    margin-bottom: 72px;
+  }
+}
+
+.contacts__text {
+  text-align: center;
+
+  @include breakpoint-mobile {
+    margin: 0 0 34px 0;
+    padding-left: 8px;
+    padding-right: 8px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  @include breakpoint-tablet {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  @include breakpoint-desktop {
+    padding: 0 0 0 100px;
+  }
+}
+
+.contacts__address {
+}
+
+.contacts__list {
+  display: grid;
+  gap: 12px;
+  @include reset-list;
+
+  @include breakpoint-desktop {
+    padding: 0 100px 0 100px;
+  }
+}
+
+.contacts__item {
+}
+
+.contacts__link {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 4px;
+  align-items: center;
+
+  @include link (
+    $fz-mobile: 14px,
+    $fz-tablet: 16px,
+    $lh-mobile: 16px);
+}
+.contacts__figure {
+  margin: 0;
+}
+.contacts__map {
+  display: block;
+  height: 372px;
+  width: 100%;
+  border: none;
+
+  @include breakpoint-desktop {
+    width: 553px;
+  }
+}
+
+.contacts__link-text--telephone {
+  letter-spacing: -0.5;
+}

@@ -1,0 +1,30 @@
+
+.developer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+
+  @include link (
+    $fz-mobile: 11px,
+    $fz-tablet: 16px
+  );
+
+  @include breakpoint-mobile {
+    line-height: 13px;
+    min-width: 110px;
+  }
+
+  @include breakpoint-tablet {
+    line-height: 19px;
+    min-width: 153px;
+  }
+
+}
+
+.developer__icon {
+  @include breakpoint-tablet {
+    width: 26px;
+    height: 32px;
+  }
+}

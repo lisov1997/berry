@@ -1,0 +1,150 @@
+.field-group {
+  @include reset-fieldset;
+
+  @include breakpoint-mobile {
+    &--choise-berry &__list {
+      grid-template-rows: repeat(6, 1fr);
+      gap: 32px 20px;
+      grid-auto-flow: column dense;
+    }
+
+    &--choise-method-of-berry-storage &__list {
+      gap: 23px;
+    }
+
+    &--choise-method-delivery &__list {
+      gap: 32px;
+    }
+
+    &--customer-details &__list {
+      gap: 36px;
+    }
+  }
+
+  @include breakpoint-tablet {
+    &--choise-berry &__list {
+      grid-template-rows: repeat(4, 1fr);
+      gap:24px 66px;
+      grid-auto-flow: column dense;
+      margin-bottom: 10px;
+    }
+
+    &--choise-method-of-berry-storage &__list {
+      grid-template-rows: repeat(2, 1fr);
+      gap: 54px 24px;
+      grid-auto-flow: column dense;
+      margin-bottom: 2px;
+    }
+
+    &--choise-method-delivery &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 48px;
+      margin-bottom: 5px;
+    }
+
+    &--customer-details &__list {
+      grid-template-columns: repeat(2, 300px);
+      // grid-template-areas:
+      //   "name name"
+      //   "telephone email"
+      //   "address address"
+      //   "comment comment";
+      gap: 36px 24px;
+    }
+  }
+
+  @include breakpoint-desktop {
+    &--choise-berry &__list {
+      grid-template-rows: repeat(2, 1fr);
+      gap:24px 48px;
+      grid-auto-flow: column dense;
+      margin-bottom: 11px;
+    }
+
+    &--choise-method-of-berry-storage &__list {
+      grid-template-rows: repeat(2, 1fr);
+      gap: 24px 54px;
+      grid-auto-flow: column dense;
+      margin-bottom: 8px;
+    }
+
+    &--choise-method-delivery &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 5px;
+    }
+
+    &--customer-details &__list {
+      grid-template-columns: repeat(2, 300px);
+      // grid-template-areas:
+      //   "name name"
+      //   "telephone email"
+      //   "address address"
+      //   "comment comment";
+      gap: 36px 24px;
+    }
+  }
+
+}
+
+.field-group__title {
+  @include title (
+    $font-family: $font-family-primary,
+    $fz-mobile: 20px,
+    $lh-mobile: 23px,
+    $fz-tablet: 28px,
+    $lh-tablet: 33px,
+    $fz-desktop: 28px,
+    $lh-desktop: 33px,
+    $text-align: left,
+  );
+  margin-bottom: 32px;
+}
+
+.field-group__list {
+  @include reset-list;
+  display: grid;
+}
+
+.field-group__item {
+  // &--name {
+  //   grid-area: name;
+  // }
+
+  // &--telephone {
+  //   grid-area: telephone;
+  // }
+
+  // &--email {
+  //   grid-area: email;
+  // }
+
+  // &--address {
+  //   grid-area: address;
+  // }
+
+  // &--comment {
+  //   grid-area: comment;
+  // }
+
+  &--name {
+    grid-column: 1 / -1;
+
+    .field {
+      max-width: 300px;
+    }
+  }
+
+  &--address {
+    grid-column: 1 / -1;
+  }
+
+  &--comment {
+    grid-column: 1 / -1;
+  }
+
+}
+.field-group__control {
+}
+.field-group__label {
+}

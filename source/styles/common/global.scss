@@ -8,3 +8,224 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+// Mixin
+
+@mixin breakpoint-mobile {
+  @media (max-width: $breakpoint-small-down) {
+    @content;
+  }
+}
+
+@mixin breakpoint-tablet {
+  @media (min-width: $breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin breakpoint-desktop {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+@mixin title(
+  $font-family: $font-family-secondary,
+  $fz-mobile: 36px,
+  $lh-mobile: 40px,
+  $fz-tablet: 48px,
+  $lh-tablet: 54px,
+  $fz-desktop: 52px,
+  $lh-desktop: 58px,
+  $color: $color-accent-secondary,
+  $text-align: center,
+) {
+  font-family: $font-family;
+  margin: 0;
+  font-weight: 400;
+  font-size: $fz-mobile;
+  line-height: $lh-mobile;
+  text-align: $text-align;
+  color: $color-accent-secondary;
+
+  @include breakpoint-tablet {
+    font-size: $fz-tablet;
+    line-height: $lh-tablet;
+  }
+
+  @include breakpoint-desktop {
+    font-size: $fz-desktop;
+    line-height: $lh-desktop;
+  }
+  @content;
+}
+
+// @mixin title-card {
+//   @include title {
+//     font-size: 28px;
+//     line-height: 32px;
+
+//     @include breakpoint-tablet {
+//       font-size: 48px;
+//       line-height: 54px;
+//     }
+
+//     @include breakpoint-desktop {
+//       font-size: 52px;
+//       line-height: 58px;
+//     }
+
+//   }
+// }
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@mixin reset-fieldset {
+  border: none;
+  padding: 0;
+}
+
+@mixin button(
+  $padding: 14px,
+  $font-size: 20px,
+  $line-height: 24px,
+  $text-color: $color-base,
+  $bg-color: $color-accent-primary
+) {
+  display: inline-block;
+  cursor: pointer;
+  padding: $padding;
+  font-family: $font-family-primary;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-decoration: none;
+  color: $text-color;
+  background-color: $bg-color;
+  transition: background 0.3s ease;
+  border: none;
+  border-radius: 40px;
+  &:hover,
+  &:focus {
+    background-color: $color-btn-hover;
+  }
+
+  &:active {
+    background-color: $color-btn-active;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  @content;
+}
+
+@mixin link (
+  $fz-mobile: 20px,
+  $fz-tablet: 20px,
+  $lh-mobile: 20px,
+  $lh-tablet: 20px
+) {
+  cursor: pointer;
+  color: $color-text-primary;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $color-link-hover;
+  }
+
+  &:active {
+    color: $color-accent-secondary;
+  }
+
+  @include breakpoint-mobile{
+    font-size: $fz-mobile;
+    line-height: $lh-mobile;
+  }
+
+  @include breakpoint-tablet{
+    font-size: $fz-tablet;
+    line-height: $lh-tablet;
+  }
+}
+
+@mixin container (
+  $width-mobile: 268px,
+  $width-tablet: 716px,
+  $width-desktop: 1128px
+  ) {
+    margin: 0 auto;
+
+    @include breakpoint-mobile {
+      width: $width-mobile;
+    }
+
+    @include breakpoint-tablet {
+      width: $width-tablet;
+    }
+
+    @include breakpoint-desktop {
+      width: $width-desktop;
+    }
+
+    @content;
+}
+
+@mixin pseudo (
+  $type: 'before',
+  $content: "",
+  $absolute: false,
+){
+  &::#{$type} {
+    content: $content;
+
+    @if $absolute {
+      position: absolute;
+    }
+
+    @content;
+  }
+}
+
+@mixin social-link (
+  $width-mobile: 32px,
+  $height-mobile: 32px,
+  $width-tablet: 40px,
+  $height-tablet: 40px,
+  $color: $color-accent-secondary,
+  $color-hover: $color-link-hover,
+  $color-active: $color-link-active
+) {
+  display: flex;
+  color: $color;
+  border: 1px solid $color;
+  border-radius: 100%;
+
+  @include breakpoint-mobile{
+    min-width: $width-mobile;
+    min-height: $height-mobile;
+  }
+
+  @include breakpoint-tablet{
+    min-width: $width-tablet;
+    min-height: $height-tablet;
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-hover;
+    border-color: $color-hover;
+  }
+
+  &:active {
+    color: $color-active;
+    border-color: $color-active;
+  }
+}

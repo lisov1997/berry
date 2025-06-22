@@ -1,0 +1,43 @@
+.site-menu {
+  @include reset-list;
+
+  @include breakpoint-mobile {
+    flex-direction: column;
+    gap: 32px;
+    min-height: 360px;
+    padding: 32px 40px;
+  }
+
+  @include breakpoint-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px
+  }
+
+    @include breakpoint-desktop {
+    gap: 28px
+  }
+}
+
+// .site-menu__item {
+// }
+
+.site-menu__link {
+  display: inline-block;
+  @include link;
+
+  @include breakpoint-mobile {
+    max-width: 240px;
+    word-wrap: break-word;
+    line-height: 20px;
+  }
+
+  @include breakpoint-tablet {
+    min-width: 112px;
+  }
+
+    @include breakpoint-desktop {
+    min-width: 132px;
+  }
+}

@@ -1,0 +1,52 @@
+
+.page-footer {
+  background-color: $color-bg;
+
+  @include breakpoint-mobile {
+    padding: 7px 0 20px 0;
+  }
+
+  @include breakpoint-tablet {
+    padding: 22px 0;
+  }
+
+  @include breakpoint-desktop {
+    padding: 24px 0;
+  }
+}
+
+.page-footer__container {
+	display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  @include breakpoint-mobile {
+    justify-content: end;
+    align-items: center;
+  }
+
+  @include breakpoint-tablet {
+    justify-content: space-between;
+  }
+
+}
+
+.page-footer__logo {
+  @include breakpoint-mobile {
+    margin-right: auto;
+  }
+
+  @include breakpoint-tablet {
+    margin-right: 38px;
+  }
+}
+
+.page-footer__socials-list {
+  @include breakpoint-mobile {
+    max-width: 250px;
+  }
+
+  @include breakpoint-tablet {
+    max-width: 300px;
+  }
+
+}
