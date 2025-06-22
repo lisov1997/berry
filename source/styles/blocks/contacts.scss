@@ -5,7 +5,7 @@
   }
 
   @include breakpoint-tablet {
-    padding: 114px 0 0 0;
+    padding: 124px 0 0 0;
   }
 
   @include breakpoint-desktop {
@@ -21,9 +21,7 @@
   }
 }
 // .contacts__title {
-//   display: block;
-//   padding-left: 5px;
-//   padding-right: 5px;
+//   margin-left: -1px;
 // }
 
 .contacts__content {
@@ -33,7 +31,7 @@
 
   @include breakpoint-tablet {
     margin-bottom: 40px;
-    padding: 0 96px 0 92px;
+    padding: 0 101px 0 86px;
   }
 
   @include container($width-desktop:553px){
