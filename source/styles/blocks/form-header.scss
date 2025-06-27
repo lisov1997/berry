@@ -5,8 +5,7 @@
   background-size: contain;
 
   @include breakpoint-mobile {
-    padding: 184px 0 20px 0;
-    background-image: url("../../images/form-header-background@1x.jpg");
+    padding: 184px 0 20px;
     background-size: 100% 120px;
     background-image: url("../../images/footer-header-background-mobile@1x.jpg");
 
@@ -16,7 +15,7 @@
   }
 
   @include breakpoint-tablet {
-    padding: 300px 0 20px 0;
+    padding: 300px 0 10px;
     background-size: 100% 200px;
     background-image: url("../../images/footer-header-background-tablet@1x.jpg");
 
@@ -29,7 +28,7 @@
     background-image: url("../../images/footer-header-background-desktop@1x.jpg");
 
     @media (min-resolution: 2dppx) {
-        background-image: url("../../images/footer-header-background-desktop@2x.jpg");
+      background-image: url("../../images/footer-header-background-desktop@2x.jpg");
     }
   }
 }
@@ -46,7 +45,6 @@
   @include breakpoint-desktop {
     margin-bottom: 48px;
   }
-
 }
 
 .form-header__text {
@@ -57,19 +55,28 @@
 
   @include breakpoint-mobile {
     font-size: 16px;
-    margin-bottom: 22px;
+    margin-bottom: 17px;
+    padding: 0 27px;
   }
 
   @include breakpoint-tablet {
     font-size: 18px;
-    padding: 0 92px;
-    margin-bottom: 16px;
+    padding: 0 130px;
+    margin-bottom: 26px;
   }
 
-  @include breakpoint-tablet {
-    padding: 0 289px;
-    margin-bottom: 26px;
+  @include breakpoint-desktop {
+    margin-bottom: 36px;
+    padding: 0 300px;
   }
 }
 
+.form-header__break {
+  display: none;
 
+  @include breakpoint-mobile {
+    &--mobile {
+      display: block;
+    }
+  }
+}

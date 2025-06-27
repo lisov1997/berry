@@ -2,14 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-	@include reset-list;
+
+  @include reset-list;
 
   @include breakpoint-mobile {
-    // min-width: 136px;
-  // display: grid;
-  // grid-template-columns: repeat(auto-fill, 32px);
-  // gap: 20px;
-  // align-content: center;
     gap: 20px;
   }
 
@@ -19,11 +15,19 @@
   }
 }
 
+.social__item {
+  display: flex;
+
+  @include breakpoint-tablet {
+    padding: 7px 0 0;
+  }
+
+  @include breakpoint-desktop {
+    padding: 0;
+  }
+}
+
 .social__link {
-  // display: flex;
-  // width: 32px;
-  // height: 32px;
-  // color: $color-accent-secondary;
   @include social-link;
 }
 

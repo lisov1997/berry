@@ -4,10 +4,6 @@
   }
 }
 
-// .catalog__container {
-//   @include container;
-// }
-
 .catalog__title {
   @include breakpoint-mobile {
     margin-bottom: 70px;
@@ -21,6 +17,7 @@
     margin-bottom: 92px;
   }
 }
+
 .catalog__list {
   @include reset-list;
   display: grid;
@@ -31,17 +28,16 @@
   }
 
   @include breakpoint-tablet {
-    grid-template-columns: repeat(auto-fit,264px);
+    grid-template-columns: repeat(auto-fit, 264px);
     gap: 52px;
     padding-left: 67px;
     padding-right: 69px;
   }
 
-    @include breakpoint-desktop {
-    grid-template-columns: repeat(auto-fit,264px);
+  @include breakpoint-desktop {
+    grid-template-columns: repeat(auto-fit, 264px);
     gap: 52px 24px;
     padding-left: 0;
     padding-right: 0;
   }
 }
-

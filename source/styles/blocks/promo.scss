@@ -1,6 +1,6 @@
 .promo {
-  @include breakpoint-mobile{
-    padding: 63px 0 190px 0;
+  @include breakpoint-mobile {
+    padding: 63px 0 190px;
     background-image: url("../../images/promo-background-image-small@1x.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,27 +36,26 @@
 
 .promo__container {
   @include container (
-  $width-tablet: 532px,
-  $width-desktop: 550px){
-  };
+    $width-tablet: 532px,
+    $width-desktop: 550px);
 }
 
 .promo__heading {
-  @include breakpoint-mobile{
+  @include breakpoint-mobile {
     margin-bottom: 32px;
     text-align: center;
   }
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     margin-bottom: 48px;
     line-height: 52px;
 
-    &--break-mobile {
+    &__break--mobile {
       display: none;
     }
   }
 
-  @include breakpoint-desktop{
+  @include breakpoint-desktop {
     margin-bottom: 52px;
     line-height: 58px;
   }
@@ -67,7 +66,7 @@
   display: flex;
   flex-direction: column;
 
-  @include breakpoint-mobile{
+  @include breakpoint-mobile {
     margin: 0 auto;
     margin-bottom: 45px;
     gap: 12px;
@@ -76,14 +75,14 @@
     line-height: 20px;
   }
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     margin: 0 0 35px 12px;
     gap: 19px;
     font-size: 18px;
     line-height: 24px;
   }
 
-  @include breakpoint-desktop{
+  @include breakpoint-desktop {
     max-width: 502px;
     margin: 0 auto;
     margin-bottom: 39px;
@@ -102,23 +101,28 @@
     @include pseudo () {
       width: 32px;
       height: 32px;
-    };
+    }
   }
 
   &--technology .promo__item-desk {
-    line-height: 22px;
+    @include breakpoint-mobile {
+      min-height: 64px;
+    }
+
+    @include breakpoint-tablet {
+      line-height: 22px;
+    }
   }
 
   &--quality::before {
     background-image: url("..//../images/promo-icon-quality.svg");
-
   }
 
   &--technology::before {
     background-image: url("..//../images/promo-icon-technology.svg");
   }
 
-    &--delivery::before {
+  &--delivery::before {
     background-image: url("..//../images/promo-icon-delivery.svg");
   }
 }
@@ -131,15 +135,15 @@
   @include button ($padding: 16px);
 
 
-  @include breakpoint-mobile{
-      min-width: 264px;
-      margin-top: 12px;
-      margin-left: 2px;
-      padding-left: 84px;
-      text-align: left;
+  @include breakpoint-mobile {
+    min-width: 264px;
+    margin-top: 15px;
+    margin-left: 2px;
+    padding-left: 84px;
+    text-align: left;
   }
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     margin: 13px 0 0 13px;
     min-width: 336px;
     padding-bottom: 18px;
@@ -147,7 +151,7 @@
     line-height: 34px;
   }
 
-  @include breakpoint-desktop{
+  @include breakpoint-desktop {
     margin-left: 37px;
   }
 }

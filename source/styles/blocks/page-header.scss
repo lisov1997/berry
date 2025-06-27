@@ -5,13 +5,8 @@
 
 .page-header__nav {
   background-color: $color-bg;
-  // box-shadow: 0 4px 4px 0 rgba(88, 13, 101, 0.25);
 
   @include breakpoint-tablet {
-    // display: flex;
-    // align-items: center;
-    // width: 768px;
-    // padding: 22px 26px;
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 35px;
@@ -21,41 +16,37 @@
     padding: 22px 0;
   }
 
-    @include breakpoint-desktop {
-    // display: flex;
-    // align-items: center;
+  @include breakpoint-desktop {
     width: 1128px;
-    // padding: 22px 26px;
+    padding: 24px 35px 24px 0;
     padding-right: 35px;
   }
 }
 
 .page-header__bar {
-
   @include breakpoint-mobile {
     display: flex;
     justify-content: space-between;
     width: 320px;
     margin: 0 auto;
-    padding: 4px 21px 2px 26px;
+    padding: 4px 21px 4px 26px;
   }
 }
 
 
 .page-header__site-menu {
-
   @include breakpoint-mobile {
-  display: none;
-  position: absolute;
-  background-color: inherit;
-  right: 0;
-  left: 0;
+    display: none;
+    position: absolute;
+    background-color: inherit;
+    right: 0;
+    left: 0;
 
-  .page-header__nav--opened & {
-    display: flex;
-    box-shadow: inset 0 4px 4px 0 rgba(88, 13, 101, 0.25);
+    .page-header__nav--opened & {
+      display: flex;
+      box-shadow: inset 0 4px 4px 0 rgba(88, 13, 101, 0.25);
+    }
   }
-}
 
   @include breakpoint-tablet {
     .page-header__nav & {
@@ -100,12 +91,12 @@
       margin-top: 2px;
     }
 
-      .page-header__nav--opened & .page-header__toggler-icon--closed{
-        display: none;
-      }
+    .page-header__nav--opened & .page-header__toggler-icon--closed {
+      display: none;
+    }
 
-      .page-header__nav--closed & .page-header__toggler-icon--opened{
-        display: none;
-      }
+    .page-header__nav--closed & .page-header__toggler-icon--opened {
+      display: none;
+    }
   }
 }

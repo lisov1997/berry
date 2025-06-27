@@ -326,4 +326,3 @@
 
 [check-image]: https://github.com/htmlacademy-adaptive/1807715-cat-energy-24/workflows/Project%20check/badge.svg?branch=master
 [check-url]: https://github.com/htmlacademy-adaptive/1807715-cat-energy-24/actions
-

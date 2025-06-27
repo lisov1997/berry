@@ -1,12 +1,28 @@
 .field {
   line-height: 125%;
   display: grid;
-  gap: 4px;
+
+  @include breakpoint-mobile {
+    gap: 5px;
+  }
+
+  @include breakpoint-tablet {
+    gap: 4px;
+  }
 }
 
 .field__title {
+  @include breakpoint-mobile {
+    margin-left: 10px;
+  }
+
   @include breakpoint-tablet {
+    margin-left: 10px;
     font-size: 16px;
+  }
+
+  @include breakpoint-desktop {
+    margin-left: 13px;
   }
 }
 
@@ -19,7 +35,7 @@
 }
 
 .field__input {
-  padding: 16px 12px;
+  padding: 16px 12px 15px;
   font-family: inherit;
   font-size: 16px;
   line-height: 125%;
@@ -39,8 +55,24 @@
     border-color: $color-form-error;
   }
 
-  &:placeholder {
+  &::placeholder {
     color: $color-form-error;
+  }
+
+  .field-group__item--address & {
+    @include breakpoint-mobile {
+      min-height: 88px;
+    }
+  }
+
+  .field-group__item--comment & {
+    @include breakpoint-mobile {
+      min-height: 124px;
+    }
+
+    @include breakpoint-tablet {
+      min-height: 144px;
+    }
   }
 }
 
@@ -48,8 +80,4 @@
   font-size: 16px;
   line-height: 125%;
   color: $color-form-error;
-}
-
-.field__input--textarea {
-  min-height: 124px;
 }

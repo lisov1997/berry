@@ -10,7 +10,6 @@ img {
 }
 
 // Mixin
-
 @mixin breakpoint-mobile {
   @media (max-width: $breakpoint-small-down) {
     @content;
@@ -46,7 +45,7 @@ img {
   font-size: $fz-mobile;
   line-height: $lh-mobile;
   text-align: $text-align;
-  color: $color-accent-secondary;
+  color: $color;
 
   @include breakpoint-tablet {
     font-size: $fz-tablet;
@@ -60,23 +59,43 @@ img {
   @content;
 }
 
-// @mixin title-card {
-//   @include title {
-//     font-size: 28px;
-//     line-height: 32px;
+@mixin container (
+  $width-mobile: 268px,
+  $width-tablet: 716px,
+  $width-desktop: 1128px
+) {
+  margin: 0 auto;
 
-//     @include breakpoint-tablet {
-//       font-size: 48px;
-//       line-height: 54px;
-//     }
+  @include breakpoint-mobile {
+    width: $width-mobile;
+  }
 
-//     @include breakpoint-desktop {
-//       font-size: 52px;
-//       line-height: 58px;
-//     }
+  @include breakpoint-tablet {
+    width: $width-tablet;
+  }
 
-//   }
-// }
+  @include breakpoint-desktop {
+    width: $width-desktop;
+  }
+
+  @content;
+}
+
+@mixin pseudo (
+  $type: "before",
+  $content: "",
+  $absolute: false,
+) {
+  &::#{$type} {
+    content: $content;
+
+    @if $absolute {
+      position: absolute;
+    }
+
+    @content;
+  }
+}
 
 @mixin reset-list {
   margin: 0;
@@ -87,6 +106,7 @@ img {
 @mixin reset-fieldset {
   border: none;
   padding: 0;
+  margin: 0;
 }
 
 @mixin button(
@@ -110,6 +130,7 @@ img {
   transition: background 0.3s ease;
   border: none;
   border-radius: 40px;
+
   &:hover,
   &:focus {
     background-color: $color-btn-hover;
@@ -145,52 +166,14 @@ img {
     color: $color-accent-secondary;
   }
 
-  @include breakpoint-mobile{
+  @include breakpoint-mobile {
     font-size: $fz-mobile;
     line-height: $lh-mobile;
   }
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     font-size: $fz-tablet;
     line-height: $lh-tablet;
-  }
-}
-
-@mixin container (
-  $width-mobile: 268px,
-  $width-tablet: 716px,
-  $width-desktop: 1128px
-  ) {
-    margin: 0 auto;
-
-    @include breakpoint-mobile {
-      width: $width-mobile;
-    }
-
-    @include breakpoint-tablet {
-      width: $width-tablet;
-    }
-
-    @include breakpoint-desktop {
-      width: $width-desktop;
-    }
-
-    @content;
-}
-
-@mixin pseudo (
-  $type: 'before',
-  $content: "",
-  $absolute: false,
-){
-  &::#{$type} {
-    content: $content;
-
-    @if $absolute {
-      position: absolute;
-    }
-
-    @content;
   }
 }
 
@@ -204,16 +187,17 @@ img {
   $color-active: $color-link-active
 ) {
   display: flex;
+  cursor: pointer;
   color: $color;
   border: 1px solid $color;
   border-radius: 100%;
 
-  @include breakpoint-mobile{
+  @include breakpoint-mobile {
     min-width: $width-mobile;
     min-height: $height-mobile;
   }
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     min-width: $width-tablet;
     min-height: $height-tablet;
   }

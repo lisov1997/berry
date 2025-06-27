@@ -1,32 +1,40 @@
 .form {
   @include breakpoint-mobile {
-    padding: 82px 0 6px 0;
+    padding: 85px 0 29px;
   }
 
   @include breakpoint-tablet {
-    padding: 114px 0 0 0;
+    padding: 114px 0 0;
   }
 
   @include breakpoint-desktop {
-    padding: 104px 0 0 0;
+    padding: 104px 0 0;
   }
 }
 
-.form__container {
+.form .form__container {
+  @include breakpoint-tablet {
+    padding: 0 46px;
+  }
+
+  @include breakpoint-desktop {
+    padding: 0 168px;
+  }
+}
+
+.form__wrap {
   display: grid;
 
   @include breakpoint-mobile {
-    gap: 32px;
+    gap: 29px;
   }
 
   @include breakpoint-tablet {
     gap: 40px;
-    padding: 0 46px;
   }
 
   @include breakpoint-tablet {
-    gap: 46px;
-    padding: 0 104px;
+    gap: 36px;
   }
 }
 
@@ -37,13 +45,22 @@
 
 
   @include breakpoint-mobile {
-    margin-bottom: 32px;
+    margin-top: 5px;
+    margin-left: -4px;
     min-width: 264px;
     justify-self: center;
   }
 
   @include breakpoint-tablet {
     min-width: 336px;
+    min-height: 68px;
     justify-self: center;
+    margin-top: 4px;
+    padding: 18px;
+    font-size: 28px;
+  }
+
+  @include breakpoint-desktop {
+    margin-top: 11px;
   }
 }

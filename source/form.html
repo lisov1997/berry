@@ -5,16 +5,20 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Berry: Закажи ягоды с доставкой в Санкт-Петербурге</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <link rel="preload" href="#" type="font/woff2" as="font">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="./favicons/32.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./favicons/180.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="preload" href="./fonts/Comfortaa/Comfortaa-Regular.woff2" type="font/woff2" as="font">
+    <script src="scripts/index.js" defer="defer"></script>
   </head>
-  <body class="page__body">
+  <body class="page__body page__body--catalog">
     <header class="page__header page-header">
       <nav class="page-header__nav page-header__nav--closed">
         <div class="page-header__bar">
           <a class="page-header__logo logo" href="index.html" aria-label="На главную">
-            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img" aria-label="Логотип компании Berry">
+            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img">
+              <title class="visually-hidden">Логотип компании Berry</title>
               <use href="icons/stack.svg#logo-image"></use>
             </svg>
 
@@ -44,7 +48,7 @@
             <a class="site-menu__link" href="#">Контакты</a>
           </li>
           <li class="site-menu__item">
-            <a class="site-menu__link" href="#">Заказать</a>
+            <a class="site-menu__link" href="#" aria-current="page">Заказать</a>
           </li>
         </ul>
       </nav>
@@ -52,17 +56,17 @@
 
     <main class="page__main page-main">
       <header class="page-main__header form-header">
-        <div class="container">
+        <div class="form-header__container container">
         <h1 class="page-main__heading form-header__title">Закажи ягоды</h1>
         <p class="form-header__text">Мы соберем для вас ягоды и доставим их в удобном
-          для вас виде - свежими или замороженными</p>
+          для вас виде - свежими или <br class="form-header__break form-header__break--mobile">замороженными</p>
         </div>
       </header>
 
       <section class="page-main__section page-main__section--decorated form">
-        <div class="container">
+        <div class="form__container container">
         <h2 class="visually-hidden">Форма заказа</h2>
-        <form class="form__container" action="https://echo.htmlacademy.ru/" method="post">
+        <form class="form__wrap" action="https://echo.htmlacademy.ru/" method="post">
           <fieldset class="form__form-group field-group field-group--choise-berry">
             <legend class="field-group__title">Выберите ягоды</legend>
             <ul class="field-group__list">
@@ -164,7 +168,8 @@
             <li class="field-group__item">
               <label class="field-group__control control control--radio">
                 <input class="control__input" type="radio" name="delivery-method" value="delivery" checked>
-                <span class="control__lead">Доставка <br> (по СПБ в пределах КАД)</span>
+                <span class="control__lead">Доставка <br class="control__break control__break--mobile
+                  control__break--tablet control__break--desktop">(по СПБ в пределах <br class="control__break control__break--tablet" >КАД)</span>
               </label>
             </li>
 
@@ -215,24 +220,27 @@
 
             <li class="field-group__item field-group__item--address">
 
-              <label class="field-group__label field">
+              <div class="field-group__label field">
                 <span class="field__title">Адрес<span class="field__required">*</span></span>
-                <input class="field__input" name="address" type="text" id="client-address"
-                  placeholder="Адрес в Санкт-Петербурге" required>
-              </label>
+                <!-- <textarea class="field__input" name="client-address" id="client-address"
+                  placeholder="Адрес в Санкт-Петербурге" rows="3" required>
+                  </textarea> -->
+                  <textarea class="field__input field__input--textarea" name="address" id="client-address"
+                placeholder="Адрес в Санкт-Петербурге" rows="1"></textarea>
+              </div>
             </li>
 
             <li class="field-group__item field-group__item--comment">
 
-              <label class="field-group__label field">
+              <div class="field-group__label field">
                 <span class="field__title">Пожелания к заказу</span>
                 <textarea class="field__input field__input--textarea" name="comment-about-order" id="comment-about-order"
                 placeholder="Чем мы можем вам помочь?" rows="4"></textarea>
-              </label>
+              </div>
             </li>
           </ul>
           </fieldset>
-          <button class="button form__submit" type="submit">Заказать</button>
+          <button class="form__submit" type="submit">Заказать</button>
         </form>
         </div>
       </section>
@@ -255,7 +263,7 @@
             <svg class="contacts__link-icon" width="32" height="32" viewBox="0 0 32 32" focusable="false" aria-hidden="true">
               <use href="icons/stack.svg#phone-icon"></use>
             </svg>
-            <span class="contacts__link-text">+ 7 910 524 41 18</span>
+            <span class="contacts__link-text contacts__link-text--telephone">+ 7 910 524 41 18</span>
           </a>
           </li>
           <li class="contacts__item">
@@ -278,7 +286,8 @@
     <footer class="page__footer page-footer">
       <div class="page-footer__container container">
       <a class="page-footer__logo logo" href="index.html" aria-label="На главную">
-            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img" aria-label="Логотип компании Berry">
+            <svg class="logo__image" width="52" height="52" viewBox="0 0 52 52" focusable="false" role="img">
+              <title class="visually-hidden">Логотип компании Berry</title>
               <use href="icons/stack.svg#logo-image"></use>
             </svg>
 

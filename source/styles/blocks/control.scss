@@ -14,7 +14,6 @@
     font-size: 18px;
     line-height: 22px;
   }
-
 }
 
 .control__input {
@@ -90,6 +89,36 @@
   .control--radio .control__input:checked:hover + &::after {
     background-color: $color-link-hover;
   }
+
+  .control--radio & {
+    @include breakpoint-mobile {
+      padding-right: 40px;
+    }
+  }
 }
 
+.control__break {
+  display: none;
 
+  &--mobile {
+    @include breakpoint-mobile {
+      display: block;
+    }
+  }
+
+  &--tablet {
+    @include breakpoint-tablet {
+      display: block;
+    }
+
+    @include breakpoint-desktop {
+      display: none;
+    }
+  }
+
+  &--desktop {
+    @include breakpoint-desktop {
+      display: block;
+    }
+  }
+}

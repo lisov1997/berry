@@ -1,5 +1,6 @@
 .logo {
   color: $color-accent-secondary;
+
   @include breakpoint-mobile {
     padding-top: 4px;
   }
@@ -35,5 +36,15 @@
 .logo__sign {
   @include breakpoint-mobile {
     display: none;
+  }
+}
+
+.page-footer__logo {
+  @include breakpoint-tablet {
+    margin-left: -5px;
+  }
+
+  @include breakpoint-desktop {
+    margin-left: 2px;
   }
 }

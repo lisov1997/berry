@@ -4,87 +4,89 @@
   @include breakpoint-mobile {
     &--choise-berry &__list {
       grid-template-rows: repeat(6, 1fr);
-      gap: 32px 20px;
+      gap: 26px 35px;
       grid-auto-flow: column dense;
     }
 
     &--choise-method-of-berry-storage &__list {
-      gap: 23px;
+      gap: 17px;
     }
 
     &--choise-method-delivery &__list {
       gap: 32px;
+      margin-bottom: 5px;
     }
 
     &--customer-details &__list {
-      gap: 36px;
+      gap: 35px;
     }
   }
 
   @include breakpoint-tablet {
+    &--choise-berry,
+    &--choise-method-of-berry-storage,
+    &--choise-method-delivery {
+      padding: 0 70px;
+    }
+
     &--choise-berry &__list {
       grid-template-rows: repeat(4, 1fr);
-      gap:24px 66px;
+      gap: 18px 65px;
       grid-auto-flow: column dense;
       margin-bottom: 10px;
     }
 
     &--choise-method-of-berry-storage &__list {
       grid-template-rows: repeat(2, 1fr);
-      gap: 54px 24px;
+      gap: 19px 13px;
       grid-auto-flow: column dense;
-      margin-bottom: 2px;
+      margin-bottom: 10px;
     }
 
     &--choise-method-delivery &__list {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 48px;
-      margin-bottom: 5px;
+      grid-template-columns: 210px 255px;
+      gap: 20px;
+      margin-bottom: 10px;
     }
 
     &--customer-details &__list {
       grid-template-columns: repeat(2, 300px);
-      // grid-template-areas:
-      //   "name name"
-      //   "telephone email"
-      //   "address address"
-      //   "comment comment";
       gap: 36px 24px;
     }
   }
 
   @include breakpoint-desktop {
+    &--choise-berry,
+    &--choise-method-of-berry-storage,
+    &--choise-method-delivery {
+      padding: 0;
+    }
+
     &--choise-berry &__list {
       grid-template-rows: repeat(2, 1fr);
-      gap:24px 48px;
+      gap: 18px 49px;
       grid-auto-flow: column dense;
-      margin-bottom: 11px;
+      margin-bottom: 17px;
     }
 
     &--choise-method-of-berry-storage &__list {
-      grid-template-rows: repeat(2, 1fr);
-      gap: 24px 54px;
-      grid-auto-flow: column dense;
-      margin-bottom: 8px;
+      grid: initial;
+      grid-template-columns: repeat(3, max-content);
+      gap: 48px;
+      margin-bottom: 9px;
     }
 
     &--choise-method-delivery &__list {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-bottom: 5px;
+      grid-template-columns: repeat(2, max-content);
+      grid-auto-flow: row dense;
+      gap: 48px;
     }
 
     &--customer-details &__list {
       grid-template-columns: repeat(2, 300px);
-      // grid-template-areas:
-      //   "name name"
-      //   "telephone email"
-      //   "address address"
-      //   "comment comment";
       gap: 36px 24px;
     }
   }
-
 }
 
 .field-group__title {
@@ -98,7 +100,46 @@
     $lh-desktop: 33px,
     $text-align: left,
   );
-  margin-bottom: 32px;
+
+
+  @include breakpoint-mobile {
+    margin-bottom: 29px;
+    margin-left: -2px;
+
+    .field-group--choise-method-delivery &,
+    .field-group--customer-details & {
+      margin-bottom: 30px;
+    }
+  }
+
+  @include breakpoint-tablet {
+    .field-group--choise-berry &,
+    .field-group--choise-method-of-berry-storage &,
+    .field-group--choise-method-delivery {
+      margin-bottom: 37px;
+    }
+
+    .field-group--customer-details & {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  @include breakpoint-desktop {
+    .field-group--choise-berry &,
+    .field-group--choise-method-of-berry-storage & {
+      margin-bottom: 45px;
+    }
+
+    .field-group--choise-method-delivery & {
+      margin-bottom: 47px;
+    }
+
+    .field-group--customer-details & {
+      margin-bottom: 50px;
+      text-align: left;
+    }
+  }
 }
 
 .field-group__list {
@@ -107,26 +148,6 @@
 }
 
 .field-group__item {
-  // &--name {
-  //   grid-area: name;
-  // }
-
-  // &--telephone {
-  //   grid-area: telephone;
-  // }
-
-  // &--email {
-  //   grid-area: email;
-  // }
-
-  // &--address {
-  //   grid-area: address;
-  // }
-
-  // &--comment {
-  //   grid-area: comment;
-  // }
-
   &--name {
     grid-column: 1 / -1;
 
@@ -142,9 +163,4 @@
   &--comment {
     grid-column: 1 / -1;
   }
-
-}
-.field-group__control {
-}
-.field-group__label {
 }

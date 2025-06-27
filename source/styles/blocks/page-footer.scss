@@ -3,7 +3,7 @@
   background-color: $color-bg;
 
   @include breakpoint-mobile {
-    padding: 7px 0 20px 0;
+    padding: 7px 0 20px;
   }
 
   @include breakpoint-tablet {
@@ -16,9 +16,11 @@
 }
 
 .page-footer__container {
-	display: flex;
+  display: flex;
   flex-wrap: wrap;
+
   gap: 5px;
+
   @include breakpoint-mobile {
     justify-content: end;
     align-items: center;
@@ -28,6 +30,11 @@
     justify-content: space-between;
   }
 
+  @include breakpoint-desktop {
+    .page__body--catalog & {
+      margin-right: 158px;
+    }
+  }
 }
 
 .page-footer__logo {
@@ -48,5 +55,4 @@
   @include breakpoint-tablet {
     max-width: 300px;
   }
-
 }

@@ -30,35 +30,43 @@
 
   @include breakpoint-mobile {
     gap: 12px;
-    padding: 32px 20px 71px 20px;
+    padding: 32px 20px 71px;
 
     &--mix {
-        padding:32px 18px 71px 18px;
-      }
+      padding: 32px 18px 71px;
+    }
   }
 
   @include breakpoint-tablet {
     gap: 17px;
     min-height: 494px;
     width: 348px;
-    padding: 32px 36px 101px 36px;
+    padding: 32px 36px 103px;
 
     &--mix {
       margin-right: 10px;
-      padding: 32px 30px 101px 36px;
+      padding: 32px 30px 104px 36px;
     }
   }
 
   @include breakpoint-desktop {
+    gap: 16px;
+    min-height: 492px;
     width: 360px;
-    padding: 32px 36px 108px 36px;
+    padding: 32px 36px 108px;
+
+    &--mix {
+      margin-right: 0;
+    }
+
+    &--fresh {
+      padding: 32px 34px 108px 36px;
+    }
   }
 }
 
 .news-card__title {
   display: block;
-  // justify-content: center;
-  // display: block;
   margin: 0;
   margin-bottom: 6px;
   font-weight: 400;
@@ -72,7 +80,7 @@
     line-height: 24px;
 
     &--fresh {
-    padding-top: 10px;
+      padding-top: 10px;
     }
 
     &--discount {
@@ -105,9 +113,11 @@
 
   @include breakpoint-desktop {
     min-height: 96px;
+
+    &--mix {
+      padding-top: 30px;
+    }
   }
-
-
 }
 
 .news-card__text {
@@ -121,11 +131,6 @@
 
   @include breakpoint-tablet {
     min-height: 196px;
-    letter-spacing: 0.2;
-
-    & .news-card__break--mobile:nth-child(1) {
-      display: block;
-    }
   }
 }
 
@@ -133,19 +138,37 @@
   align-self: self-end;
   margin: 0;
 
-  @include breakpoint-tablet{
+  @include breakpoint-tablet {
     margin-top: 1px;
   }
-}
 
-.news-card__break--mobile{
   @include breakpoint-tablet {
-    display: none;
+    margin-top: 0;
   }
 }
 
-.news-card__break--tablet{
+.news-card__break {
+  display: none;
+
   @include breakpoint-mobile {
-    display: none;
+    &--mobile {
+      display: block;
+    }
+  }
+
+  @include breakpoint-tablet {
+    &--tablet {
+      display: block;
+    }
+  }
+
+  @include breakpoint-desktop {
+    &--tablet {
+      display: none;
+    }
+
+    &--desktop {
+      display: block;
+    }
   }
 }

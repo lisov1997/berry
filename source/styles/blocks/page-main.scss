@@ -4,6 +4,7 @@
 
 .page-main__section--decorated {
   position: relative;
+
   @include pseudo($absolute: true) {
     width: 228px;
     height: 32px;
@@ -20,18 +21,20 @@
 
     @include breakpoint-tablet {
       width: 296px;
-      height: 4%;
+      height: 42px;
     }
   }
 }
 
 .page-main__header {
-  @include breakpoint-mobile {
-    margin-bottom: 60px;
-  }
+  &:not(.form-header) {
+    @include breakpoint-mobile {
+      margin-bottom: 60px;
+    }
 
-  @include breakpoint-tablet {
-    margin-bottom: 100px;
+    @include breakpoint-tablet {
+      margin-bottom: 100px;
+    }
   }
 }
 
@@ -44,9 +47,3 @@
     margin-bottom: 100px;
   }
 }
-
-// .page-main__subheading {
-//   margin: 0;
-//   font-size: 16px;
-//   text-align: center;
-// }

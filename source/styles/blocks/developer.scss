@@ -18,8 +18,12 @@
   @include breakpoint-tablet {
     line-height: 19px;
     min-width: 153px;
+    padding: 5px 0 0;
   }
 
+  @include breakpoint-desktop {
+    padding: 0;
+  }
 }
 
 .developer__icon {
