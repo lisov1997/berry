@@ -115,7 +115,7 @@
   @include breakpoint-tablet {
     .field-group--choise-berry &,
     .field-group--choise-method-of-berry-storage &,
-    .field-group--choise-method-delivery {
+    .field-group--choise-method-delivery & {
       margin-bottom: 37px;
     }
 

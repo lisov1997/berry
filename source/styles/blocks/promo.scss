@@ -50,7 +50,7 @@
     margin-bottom: 48px;
     line-height: 52px;
 
-    &__break--mobile {
+    &-break--mobile {
       display: none;
     }
   }
@@ -72,7 +72,7 @@
     gap: 12px;
     font-size: 16px;
     max-width: 208px;
-    line-height: 20px;
+    line-height: 18px;
   }
 
   @include breakpoint-tablet {
@@ -137,7 +137,7 @@
 
   @include breakpoint-mobile {
     min-width: 264px;
-    margin-top: 15px;
+    margin-top: 18px;
     margin-left: 2px;
     padding-left: 84px;
     text-align: left;

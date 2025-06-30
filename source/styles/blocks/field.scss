@@ -56,7 +56,7 @@
   }
 
   &::placeholder {
-    color: $color-form-error;
+    color: $color-form-disabled;
   }
 
   .field-group__item--address & {
